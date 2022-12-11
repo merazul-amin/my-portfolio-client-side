@@ -1,6 +1,22 @@
 import React from 'react';
 import './Contact.css';
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
+import { toast } from 'react-toastify';
+
 const Contact = () => {
+    const form = useRef();
+
+    const handleContact = (e) => {
+        e.preventDefault();
+        emailjs.sendForm('service_6ps2uzq', 'template_ad9m2oq', form.current, 'sbMzY9eV7sxpuU1v7')
+            .then((result) => {
+                toast.success('Message Sent.')
+                e.target.reset();
+            }, (error) => {
+                toast.error('Message Not Sent.')
+            });
+    }
     return (
         <div>
             <div className="background">
@@ -27,26 +43,26 @@ const Contact = () => {
                                 <div className="app-contact">CONTACT INFO : +8801810476369</div>
                             </div>
                             <div className="screen-body-item">
-                                <div className="app-form">
+                                <form ref={form} onSubmit={handleContact} className="app-form">
                                     <div className="app-form-group">
                                         <input className="app-form-control"
-                                            type='text' placeholder="NAME" />
+                                            type='text' name='user_name' placeholder="NAME" />
                                     </div>
                                     <div className="app-form-group">
-                                        <input type='email' className="app-form-control" placeholder="EMAIL" />
+                                        <input type='email'
+                                            name='user_email' className="app-form-control" placeholder="EMAIL" />
                                     </div>
-                                    <div className="app-form-group">
-                                        <input className="app-form-control"
-                                            type='number' placeholder="CONTACT NO" />
-                                    </div>
+
                                     <div className="app-form-group message">
-                                        <textarea className="app-form-control" placeholder="MESSAGE" />
+
+                                        <textarea className="app-form-control"
+                                            name='message' placeholder="MESSAGE" />
                                     </div>
                                     <div className="app-form-group buttons">
                                         <button className='btn btn-error btn-sm'>CANCEL</button>
-                                        <button className='btn btn-success btn-sm ml-2'>SEND</button>
+                                        <button type='submit' className='btn btn-success btn-sm ml-2'>SEND</button>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
