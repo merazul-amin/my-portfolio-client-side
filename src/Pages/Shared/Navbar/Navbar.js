@@ -2,12 +2,9 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css'
 import { AiOutlineBuild } from "react-icons/ai";
-import Name from './Name/Name';
 const NavigationBar = () => {
-
-
     const navItems = <>
-        <li className='text-white hover:text-red-600 font-bold'><NavLink to='/about' className={({ isActive }) => isActive ? "active" : undefined}>About</NavLink></li>
+        <li className='text-white hover:text-red-600 font-bold'><NavLink to='/about' className={({ isActive }) => isActive ? "active" : undefined}>About Me</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/'>Portfolio</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/contactMe'>Contact Me</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/hireMe'>Hire Me</NavLink></li>
@@ -46,9 +43,7 @@ const NavigationBar = () => {
                     </ul>
                 </div>
             </div>
-            <div className='hidden md:block'>
-                <Name></Name>
-            </div>
+
         </div>
     );
 };

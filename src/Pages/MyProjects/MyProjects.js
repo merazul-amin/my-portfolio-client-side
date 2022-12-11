@@ -10,7 +10,8 @@ const MyProjects = () => {
     }, [])
     return (
         <div>
-            <h1 className='text-4xl text-center my-6'>My Projects</h1>
+            <h1 className='text-4xl text-center mt-6 font-bold'>My Projects</h1>
+            <p className='text-center mb-6'>Recently Done</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[90%] mx-auto'>
                 {
                     projects.map((project, i) => <SingleProject project={project} key={i}></SingleProject>)
