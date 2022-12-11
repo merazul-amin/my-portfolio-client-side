@@ -14,8 +14,8 @@ const routes = createBrowserRouter([
             { path: '/contactMe', element: <Contact></Contact> },
             { path: '/hireMe', element: <HireMe></HireMe> },
             {
-                path: '/projectDetails/:id', element: <ProjectDetails></ProjectDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/projectDetails/${params.id}`)
+                path: '/projects/:id', element: <ProjectDetails></ProjectDetails>,
+                loader: ({ params }) => fetch(`https://my-portfolio-phi-rosy.vercel.app/projects/${params.id}`)
             }
         ]
     }
