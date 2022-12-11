@@ -1,5 +1,7 @@
 import React from 'react';
+import Contact from '../Contact/Contact';
 import MyProjects from '../MyProjects/MyProjects';
+import Footer from '../Shared/Footer/Footer';
 import TopBanner from './TopBanner/TopBanner';
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
         <div>
             <TopBanner></TopBanner>
             <MyProjects></MyProjects>
+            <Contact></Contact>
+            <Footer></Footer>
         </div>
     );
 };
