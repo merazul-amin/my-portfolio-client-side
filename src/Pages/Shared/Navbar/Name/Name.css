@@ -4,9 +4,9 @@
 }
 
 .wrapper {
-    height: 150px;
+    height: 80px;
     width: 100%;
-    background-color: rgb(14 165 233);
+    /* background-color: rgb(14 165 233); */
     position: relative;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css'
-import { AiOutlineBuild } from "react-icons/ai";
+import avatar from '../../../assets/top-photo.jpg';
 const NavigationBar = () => {
     const navItems = <>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/about' className={({ isActive }) => isActive ? "active" : undefined}>About Me</NavLink></li>
@@ -10,9 +10,9 @@ const NavigationBar = () => {
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/hireMe'>Hire Me</NavLink></li>
     </>
     return (
-        <div className='bg-sky-500'>
-            <div className="navbar  " >
-                <div className="navbar-start flex justify-between lg:block w-[100%]">
+        <div className='h-[80px]'>
+            <div className="navbar p-0 h-[80px]" >
+                <div className="navbar-start flex justify-between h-[80px]  lg:block w-[100%]">
 
                     <div className="dropdown text-white">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,21 +22,27 @@ const NavigationBar = () => {
                             {navItems}
                         </ul>
                     </div>
+
+
                     <Link to='/' >
 
-                        <span className='flex'>
-                            <AiOutlineBuild className='text-white text-4xl'> </AiOutlineBuild>
+                        <div className='flex'>
 
-                            <span>
+                            <div className='mx-2 mt-2'>
+                                <img className='w-[40px] h-[40px] rounded-full' src={avatar} alt='/' />
+                            </div>
+
+                            <div>
                                 <span className=" text-2xl text-white font-bold">Md Merazul Amin</span>
                                 <p className='text-white'>Junior Mern Stack Web Developer</p>
-                            </span>
-                        </span>
+                            </div>
+                        </div>
                     </Link>
+
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
+                    <ul className="menu menu-horizontal">
 
                         {navItems}
 
