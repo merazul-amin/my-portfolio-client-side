@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css'
 import avatar from '../../../assets/top-photo.jpg';
+import DarkModeToggle from "react-dark-mode-toggle";
+import { DarkLightContext } from '../../../contexts/ThemeContext/ThemeContext';
+
 const NavigationBar = () => {
+    const { isDarkMode, setIsDarkMode } = useContext(DarkLightContext);
+    console.log(isDarkMode);
+
     const navItems = <>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/about' className={({ isActive }) => isActive ? "active" : undefined}>About Me</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/'>Portfolio</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/contactMe'>Contact Me</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/hireMe'>Hire Me</NavLink></li>
+        <li className='text-white hover:text-red-600 font-bold'><NavLink><DarkModeToggle
+            onChange={setIsDarkMode}
+            checked={isDarkMode}
+            size={50}
+        /></NavLink></li>
+        <li>
+        </li>
     </>
     return (
         <div className='h-[80px]'>

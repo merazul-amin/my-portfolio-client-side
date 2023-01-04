@@ -9,11 +9,12 @@ const Contact = () => {
 
     const handleContact = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_6ps2uzq', 'template_ad9m2oq', form.current, 'sbMzY9eV7sxpuU1v7')
+        emailjs.sendForm('service_sn1dq2j', 'template_044o7e7', form.current, 'WD1yDeLEk4zX9Kfb3')
             .then((result) => {
                 toast.success('Message Sent.')
                 e.target.reset();
             }, (error) => {
+                console.log(error);
                 toast.error('Message Not Sent.')
             });
     }
@@ -46,11 +47,11 @@ const Contact = () => {
                                 <form ref={form} onSubmit={handleContact} className="app-form">
                                     <div className="app-form-group">
                                         <input className="app-form-control"
-                                            type='text' name='user_name' placeholder="NAME" />
+                                            type='text' name='from_name' placeholder="NAME" />
                                     </div>
                                     <div className="app-form-group">
                                         <input type='email'
-                                            name='user_email' className="app-form-control" placeholder="EMAIL" />
+                                            name='from_email' className="app-form-control" placeholder="EMAIL" />
                                     </div>
 
                                     <div className="app-form-group message">
