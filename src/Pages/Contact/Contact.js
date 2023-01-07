@@ -14,7 +14,6 @@ const Contact = () => {
                 toast.success('Message Sent.')
                 e.target.reset();
             }, (error) => {
-                console.log(error);
                 toast.error('Message Not Sent.')
             });
     }
