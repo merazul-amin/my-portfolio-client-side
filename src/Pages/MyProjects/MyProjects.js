@@ -47,9 +47,25 @@ const MyProjects = () => {
 
 
     return (
-        <div>
-            <h1 className='text-4xl text-center mt-6 font-bold'>My Projects</h1>
-            <p className='text-center mb-6'>Recently Done</p>
+        <div className='my-10'>
+            {/* Top About Text */}
+            <div className='flex justify-center my-10'>
+                {/* left Line */}
+                <div className='border-4 mt-7 w-[250px] h-0'>
+
+                </div>
+
+                {/* Text */}
+                <div>
+                    <h1 className='text-white text-6xl text-center font-extrabold lg:mx-5'>Projects <span className='text-green-400'>I Did</span></h1>
+                    <p className='text-white text-center mt-5'>Have a look in my projects which I recently did.</p>
+                </div>
+
+                {/* Right Line */}
+                <div className='border-4 mt-7 w-[250px] h-0'>
+
+                </div>
+            </div>
             <div className='w-[85%] lg:w-1/2 mx-auto'>
                 <Slider {...settings}>
                     {
