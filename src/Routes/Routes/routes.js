@@ -8,11 +8,11 @@ import ProjectDetails from "../../Pages/ProjectDetails/ProjectDetails";
 
 const routes = createBrowserRouter([
     {
-        path: '/', element: <Main></Main>, children: [
+        path: '/', element: <Main></Main>,
+        children: [
             { path: '/', element: <Home></Home> },
             { path: '/about', element: <About></About> },
             { path: '/contactMe', element: <Contact></Contact> },
-            { path: '/hireMe', element: <HireMe></HireMe> },
             {
                 path: '/projects/:id', element: <ProjectDetails></ProjectDetails>,
                 loader: ({ params }) => fetch(`https://my-portfolio-phi-rosy.vercel.app/projects/${params.id}`)

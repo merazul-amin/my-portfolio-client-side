@@ -10,10 +10,10 @@ const NavigationBar = () => {
     console.log(isDarkMode);
 
     const navItems = <>
-        <li className='text-white hover:text-red-600 font-bold'><NavLink to='/about' className={({ isActive }) => isActive ? "active" : undefined}>About Me</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/'>Portfolio</NavLink></li>
+        <li className='text-white hover:text-red-600 font-bold'><NavLink to='/about' className={({ isActive }) => isActive ? "active" : undefined}>About Me</NavLink></li>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/contactMe'>Contact Me</NavLink></li>
-        <li className='text-white hover:text-red-600 font-bold'><NavLink to='/hireMe'>Hire Me</NavLink></li>
+
         <li className='text-white hover:text-red-600 font-bold'><NavLink><DarkModeToggle
             onChange={setIsDarkMode}
             checked={isDarkMode}
