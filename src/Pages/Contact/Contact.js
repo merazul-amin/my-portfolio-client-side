@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
+import { RotatingLines } from 'react-loader-spinner'
 
 const Contact = () => {
     const form = useRef();
+    const [isSendLoading, setIsSendLoading] = useState(false);
 
     const handleContact = (e) => {
         e.preventDefault();
+        setIsSendLoading(true);
         emailjs.sendForm('service_sn1dq2j', 'template_044o7e7', form.current, 'WD1yDeLEk4zX9Kfb3')
             .then((result) => {
                 toast.success('Message Sent.')
+                setIsSendLoading(false);
                 e.target.reset();
             }, (error) => {
                 toast.error('Message Not Sent.')
@@ -19,7 +23,8 @@ const Contact = () => {
     }
     return (
         <div>
-            <div className="background">
+            <div className="background relative">
+
                 <div className="container">
                     <div className="screen">
                         <div className="screen-header">
@@ -34,13 +39,24 @@ const Contact = () => {
                                 <div className="screen-header-ellipsis"></div>
                             </div>
                         </div>
-                        <div className="screen-body">
+                        <div className="screen-body relative">
                             <div className="screen-body-item left">
                                 <div className="app-title">
                                     <span>CONTACT</span>
                                     <span>Me</span>
                                 </div>
                                 <div className="app-contact">Phone: +8801810476369</div>
+                            </div>
+                            <div className='absolute left-1/3 top-32'>
+                                {
+                                    isSendLoading && <RotatingLines
+                                        strokeColor="white"
+                                        strokeWidth="3"
+                                        animationDuration="0.75"
+                                        width="100"
+                                        visible={true}
+                                    />
+                                }
                             </div>
                             <div className="screen-body-item">
                                 <form ref={form} onSubmit={handleContact} className="app-form">

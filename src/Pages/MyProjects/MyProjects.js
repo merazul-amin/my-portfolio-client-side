@@ -2,13 +2,19 @@ import React, { useEffect, useState } from 'react';
 import SingleProject from './SingleProject';
 import Slider from "react-slick";
 import './Slick.css';
+import { RotatingLines } from 'react-loader-spinner'
 
 const MyProjects = () => {
     const [projects, setProjects] = useState([]);
+    const [projectsLoading, setProjectsLoading] = useState(false);
     useEffect(() => {
+        setProjectsLoading(true);
         fetch('https://my-portfolio-phi-rosy.vercel.app/projects')
             .then(res => res.json())
-            .then(data => setProjects(data))
+            .then(data => {
+                setProjects(data)
+                setProjectsLoading(false);
+            })
     }, []);
 
     const settings = {
@@ -16,33 +22,7 @@ const MyProjects = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
+        slidesToScroll: 1
     };
 
 
@@ -66,15 +46,28 @@ const MyProjects = () => {
 
                 </div>
             </div>
-            <div className='w-[85%] lg:w-1/2 mx-auto'>
-                <Slider {...settings}>
-                    {
-                        projects.map((project, i) => <SingleProject project={project} key={i}></SingleProject>)
-                    }
-                </Slider>
+            <div className='w-[85%] sm:w-1/2 mx-auto'>
+                {
+                    projectsLoading ?
+                        <div className='w-[20%] mx-auto'>
+                            <RotatingLines
+                                strokeColor="grey"
+                                strokeWidth="3"
+                                animationDuration="0.75"
+                                width="100"
+                                visible={true}
+                            />
+                        </div>
+                        :
+                        <Slider {...settings}>
+                            {
+                                projects.map((project, i) => <SingleProject project={project} key={i}></SingleProject>)
+                            }
+                        </Slider>
+                }
+
+
             </div>
-
-
         </div>
     );
 };

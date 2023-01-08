@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const SingleProject = ({ project }) => {
     return (
-        <div className="card card-compact w-[95%]  lg:w-2/3 mx-auto bg-indigo-500">
-            <figure><img className='h-[300px] w-full' src={project.thumbnail} alt="/" /></figure>
+        <div className="card card-compact w-[95%]  lg:w-2/3 mx-auto bg-gray-400 bg-opacity-75">
+            {/* <figure><img className='h-[300px] w-full' src={project.thumbnail} alt="/" /></figure> */}
             <div className="card-body">
                 <h2 className="card-title">{project.name}</h2>
                 <p>{project.description}</p>
