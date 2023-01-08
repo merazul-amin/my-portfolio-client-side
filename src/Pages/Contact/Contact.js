@@ -40,7 +40,7 @@ const Contact = () => {
                                     <span>CONTACT</span>
                                     <span>Me</span>
                                 </div>
-                                <div className="app-contact">CONTACT INFO : +8801810476369</div>
+                                <div className="app-contact">Phone: +8801810476369</div>
                             </div>
                             <div className="screen-body-item">
                                 <form ref={form} onSubmit={handleContact} className="app-form">

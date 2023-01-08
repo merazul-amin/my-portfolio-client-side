@@ -3,6 +3,7 @@ import './App.css';
 import routes from './Routes/Routes/routes';
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-circular-progressbar/dist/styles.css';
 
 // Import css files
 import "slick-carousel/slick/slick.css";

@@ -58,7 +58,7 @@ const About = () => {
                 {/* Things I Love */}
                 <div className='lg:w-[40%] mx-auto'>
                     <h1 className='uppercase text-2xl font-bold'>Things I love</h1>
-                    <div>
+                    <div className='ml-4'>
                         <p><HiCode className='text-white text-2xl mr-2 inline'></HiCode>Programming And coding.</p>
                         <p><BiDesktop className='text-white text-2xl mr-2 inline'></BiDesktop>Computer related technology and work.</p>
                         <p><IoMdFootball className='text-white text-2xl mr-2 inline'></IoMdFootball>Playing and watching football.</p>
@@ -67,9 +67,9 @@ const About = () => {
 
                 </div>
                 {/* What can I do */}
-                <div className='lg:w-[60%] mx-auto'>
+                <div className='lg:w-[60%] mx-auto mt-5 lg:mt-0'>
                     <h1 className='uppercase text-2xl font-bold'>What can I do</h1>
-                    <div>
+                    <div className='ml-4'>
                         <p ><ImPlus className='inline mr-2'></ImPlus>Make Website with Plane html, css, Javascript.</p>
                         <p ><ImPlus className='inline mr-2'></ImPlus>Make Website with Css Framework. Such as bootstrap, tailwind.</p>
                         <p ><ImPlus className='inline mr-2'></ImPlus>Can use many components library of tailwind.</p>

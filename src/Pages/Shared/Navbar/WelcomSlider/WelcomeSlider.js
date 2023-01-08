@@ -1,6 +1,6 @@
 import React from 'react';
-import './Name.css';
-const Name = () => {
+import './WelcomeSlider.css';
+const WelcomeSlider = () => {
     return (
         <div className="wrapper">
             <marquee behavior="scroll" scrollamount="10" className='text-4xl font-bold text-white' direction="left">
@@ -25,4 +25,4 @@ const Name = () => {
     );
 };
 
-export default Name;
+export default WelcomeSlider;
