@@ -37,7 +37,7 @@ const MyProjects = () => {
 
                 {/* Text */}
                 <div>
-                    <h1 className='text-white text-6xl text-center font-extrabold lg:mx-5'>Projects <span className='text-green-400'>I Did</span></h1>
+                    <h1 className='text-white text-6xl text-center font-extrabold lg:mx-5'>Projects <span className='text-green-400 inline-block mt-5 lg:mt-0'>I Did</span></h1>
                     <p className='text-white text-center mt-5'>Have a look in my projects which I recently did.</p>
                 </div>
 

@@ -7,7 +7,7 @@ import { DarkLightContext } from '../../../contexts/ThemeContext/ThemeContext';
 
 const NavigationBar = () => {
     const { isDarkMode, setIsDarkMode } = useContext(DarkLightContext);
-    console.log(isDarkMode);
+
 
     const navItems = <>
         <li className='text-white hover:text-red-600 font-bold'><NavLink to='/'>Portfolio</NavLink></li>

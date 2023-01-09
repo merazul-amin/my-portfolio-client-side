@@ -76,9 +76,9 @@ const Skills = () => {
                 <div>
                     <h1 className='text-4xl text-white text-center my-5'>Familiar</h1>
                     <div className='md:flex justify-around'>
-                        <img className='w-[100px] mx-auto md:mx-0 my-3' src={nextJs} alt="" />
+                        {/* <img className='w-[100px] mx-auto md:mx-0 my-3' src={nextJs} alt="" /> */}
                         <img className='w-[100px] mx-auto md:mx-0 my-3' src={redux} alt="" />
-                        <img className='w-[100px] mx-auto md:mx-0 my-3' src={typescript} alt="" />
+                        {/* <img className='w-[100px] mx-auto md:mx-0 my-3' src={typescript} alt="" /> */}
                     </div>
                     <hr />
                 </div>
