@@ -20,6 +20,8 @@ import bootstrap from '../../assets/skills/bootstrap.png';
 import msoffice from '../../assets/skills/msoffice.png';
 import vercel from '../../assets/skills/vercel.png';
 import npm from '../../assets/skills/npm.png';
+import materialUi from '../../assets/skills/materialUi.png';
+import sass from '../../assets/skills/sass.png';
 
 
 
@@ -78,6 +80,8 @@ const Skills = () => {
                     <div className='md:flex justify-around'>
                         {/* <img className='w-[100px] mx-auto md:mx-0 my-3' src={nextJs} alt="" /> */}
                         <img className='w-[100px] mx-auto md:mx-0 my-3' src={redux} alt="" />
+                        <img className='w-[100px] mx-auto md:mx-0 my-3' src={materialUi} alt="" />
+                        <img className='w-[100px] mx-auto md:mx-0 my-3' src={sass} alt="" />
                         {/* <img className='w-[100px] mx-auto md:mx-0 my-3' src={typescript} alt="" /> */}
                     </div>
                     <hr />
